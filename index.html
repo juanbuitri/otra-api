@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main id="app"></main>
+
+    <script>
+       let pokemones = [];
+let totalPokes = 1026; /* debe agregarse uno mas ya q el indice comienza en 0 */
+
+async function  conexionLista() {
+    const res = await fetch('https://pokeapi.co/api/v2/pokemon?limit=1025')
+    const data = await res.json()
+    pokemones = data;
+   // mostrarLista(pokemones)
+    console.log(pokemones)
+
+    for (var i = 0; i < totalPokes; i++) {
+        console.log(pokemones.results[i].name)
+        document.getElementById("app").innerHTML += "<p>" + pokemones.results[i].name + "</p>"
+}
+}
+
+conexionLista()
+    </script>
+</body>
+</html>
