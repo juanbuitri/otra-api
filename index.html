@@ -7,6 +7,8 @@
 </head>
 <body>
     <main id="app"></main>
+    <button onclick="filtro('https://pokeapi.co/api/v2/type/fire')">fire</button>
+    <button onclick="filtro('https://pokeapi.co/api/v2/type/water')">agua</button>  // ejemplo con la api
 
     <script>
        let pokemones = [];
@@ -24,6 +26,8 @@ async function  conexionLista() {
         document.getElementById("app").innerHTML += "<p>" + pokemones.results[i].name + "</p>"
 }
 }
+
+// filtro async pantallazo celular
 
 conexionLista()
     </script>
